@@ -1,6 +1,5 @@
 // services/api/index.js
 import express from "express";
-import fetch from "node-fetch";
 
 const app = express();
 app.use(express.json());
@@ -11,7 +10,6 @@ app.post("/ingest-trigger", async (req, res) => {
   const secret = req.headers["x-api-key"] || req.query.api_key;
   if (secret !== process.env.API_SECRET) return res.status(401).json({ error: "unauthorized" });
 
-  // For quick test, call the ingest service URL if provided, otherwise return ok.
   const ingestUrl = process.env.INGEST_SERVICE_URL;
   if (ingestUrl) {
     try {
