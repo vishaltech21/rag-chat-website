@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WMS_Capabilities version="1.3.0"
+  xmlns="http://www.opengis.net/wms"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:esri_wms="http://www.esri.com/wms"
+  xsi:schemaLocation="http://www.opengis.net/wms http://schemas.opengis.net/wms/1.3.0/capabilities_1_3_0.xsd http://www.esri.com/wms https://maps-cartes.services.geo.ca:443/server_serveur/services/NRCan/900A_and_top_100_fr/MapServer/WmsServer?version=1.3.0%26service=WMS%26request=GetSchemaExtension">
+  <Service>
+    <Name><![CDATA[WMS]]></Name>
+    <Title><![CDATA[900A]]></Title>
+    <Abstract><![CDATA[Ce service de cartes Web illustre l'emplacement des principaux champs de pétrole et de gaz, productions minières et activités métallurgiques au Canada au cours de l'année de référence indiquée. Les données de ce service de cartes Web proviennent de la Carte 900A : Principales régions minières, principales mines productrices et principaux champs de pétrole et de gaz du Canada, produite annuellement par Ressources naturelles Canada. ]]></Abstract>
+    <KeywordList><Keyword><![CDATA[sciences de la Terre,fonderies,affineries,traitement des minerais,minéraux industriels,minéraux métalliques,industrie minière,acier,ferro-alliages,déchiqueteurs d'automobiles,recyclage,métal]]></Keyword></KeywordList>
+    <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://maps-cartes.services.geo.ca:443/server_serveur/services/NRCan/900A_and_top_100_fr/MapServer/WmsServer?"/>
+    <ContactInformation>
+      <ContactPersonPrimary>
+        <ContactPerson><![CDATA[]]></ContactPerson>
+        <ContactOrganization><![CDATA[Gouvernement du Canada; Ressources naturelles Canada]]></ContactOrganization>
+      </ContactPersonPrimary>
+      <ContactPosition><![CDATA[]]></ContactPosition>
+      <ContactAddress>
+        <AddressType><![CDATA[]]></AddressType>
+        <Address><![CDATA[]]></Address>
+        <City><![CDATA[]]></City>
+        <StateOrProvince><![CDATA[]]></StateOrProvince>
+        <PostCode><![CDATA[]]></PostCode>
+        <Country><![CDATA[]]></Country>
+      </ContactAddress>
+      <ContactVoiceTelephone><![CDATA[]]></ContactVoiceTelephone>
+      <ContactFacsimileTelephone><![CDATA[]]></ContactFacsimileTelephone>
+      <ContactElectronicMailAddress><![CDATA[FGP-PGF@NRCan-RNCan.gc.ca]]></ContactElectronicMailAddress>
+    </ContactInformation>
+    <Fees><![CDATA[]]></Fees>
+    <AccessConstraints><![CDATA[Licence du gouvernement ouvert - Canada (http://ouvert.canada.ca/fr/licence-du-gouvernement-ouvert-canada)]]></AccessConstraints>
+    <MaxWidth>4096</MaxWidth>
+    <MaxHeight>4096</MaxHeight>
+  </Service>
+  <Capability>
+    <Request>
+      <GetCapabilities>
+        <Format>application/vnd.ogc.wms_xml</Format>
+        <Format>text/xml</Format>
+        <DCPType>
+          <HTTP><Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://maps-cartes.services.geo.ca:443/server_serveur/services/NRCan/900A_and_top_100_fr/MapServer/WmsServer?"/></Get></HTTP>
+        </DCPType>
+      </GetCapabilities>
+      <GetMap>
+        <Format>image/bmp</Format>
+        <Format>image/jpeg</Format>
+        <Format>image/tiff</Format>
+        <Format>image/png</Format>
+        <Format>image/png8</Format>
+        <Format>image/png24</Format>
+        <Format>image/png32</Format>
+        <Format>image/gif</Format>
+        <Format>image/svg+xml</Format>
+        <DCPType>
+          <HTTP><Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://maps-cartes.services.geo.ca:443/server_serveur/services/NRCan/900A_and_top_100_fr/MapServer/WmsServer?"/></Get></HTTP>
+        </DCPType>
+      </GetMap>
+      <GetFeatureInfo>
+        <Format>application/vnd.esri.wms_raw_xml</Format>
+        <Format>application/vnd.esri.wms_featureinfo_xml</Format>
+        <Format>application/vnd.ogc.wms_xml</Format>
+        <Format>application/geojson</Format>
+        <Format>text/xml</Format>
+        <Format>text/html</Format>
+        <Format>text/plain</Format>
+        <DCPType>
+          <HTTP><Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://maps-cartes.services.geo.ca:443/server_serveur/services/NRCan/900A_and_top_100_fr/MapServer/WmsServer?"/></Get></HTTP>
+        </DCPType>
+      </GetFeatureInfo>
+      <esri_wms:GetStyles>
+        <Format>application/vnd.ogc.sld+xml</Format>
+        <DCPType>
+          <HTTP><Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://maps-cartes.services.geo.ca:443/server_serveur/services/NRCan/900A_and_top_100_fr/MapServer/WmsServer?"/></Get></HTTP>
+        </DCPType>
+      </esri_wms:GetStyles>
+    </Request>
+    <Exception>
+      <Format>application/vnd.ogc.se_xml</Format>
+      <Format>application/vnd.ogc.se_inimage</Format>
+      <Format>application/vnd.ogc.se_blank</Format>
+      <Format>text/xml</Format>
+      <Format>XML</Format>
+    </Exception>
+    <Layer>
+      <Title><![CDATA[900A]]></Title>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:3978</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>-148.576609</westBoundLongitude><eastBoundLongitude>-29.299481</eastBoundLongitude><southBoundLatitude>35.023187</southBoundLatitude><northBoundLatitude>73.647827</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="-148.576609" miny="35.023187" maxx="-29.299481" maxy="73.647827"/>
+<BoundingBox CRS="EPSG:4326" minx="35.023187" miny="-148.576609" maxx="73.647827" maxy="-29.299481"/>
+<BoundingBox CRS="EPSG:3978" minx="-2206903.626770" miny="-666310.330627" maxx="3300646.500488" maxy="2685218.786072"/>
+      <Layer queryable="1">
+        <Title><![CDATA[900A]]></Title>
+        <Abstract><![CDATA[Ce service de cartes Web illustre l'emplacement des principaux champs de pétrole et de gaz, productions minières et activités métallurgiques au Canada au cours de l'année de référence indiquée. Les données de ce service de cartes Web proviennent de la Carte 900A : Principales régions minières, principales mines productrices et principaux champs de pétrole et de gaz du Canada, produite annuellement par Ressources naturelles Canada. ]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:3978</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>-145.410699</westBoundLongitude><eastBoundLongitude>-30.353865</eastBoundLongitude><southBoundLatitude>35.023187</southBoundLatitude><northBoundLatitude>72.965109</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="-145.410699" miny="35.023187" maxx="-30.353865" maxy="72.965109"/>
+<BoundingBox CRS="EPSG:4326" minx="35.023187" miny="-145.410699" maxx="72.965109" maxy="-30.353865"/>
+<BoundingBox CRS="EPSG:3978" minx="-2073312.314087" miny="-666310.330627" maxx="3300646.500488" maxy="2610286.566711"/>
+      <Layer queryable="1">
+        <Title><![CDATA[Activités métallurgiques]]></Title>
+        <Abstract><![CDATA[Ce jeu de données fournit de l’information sur activités métallurgiques au Canada au cours de l’année de référence donnée. Le jeu de données est maintenu par le Secteur des terres et des minéraux, Ressources naturelles Canada, et est un sous-ensemble de l’information contenue dans la Carte 900a – Principales régions minières, principales mines productrices et principaux champs de pétrole et de gaz du Canada.]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:3978</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>-128.695400</westBoundLongitude><eastBoundLongitude>-50.618759</eastBoundLongitude><southBoundLatitude>37.258246</southBoundLatitude><northBoundLatitude>59.162721</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="-128.695400" miny="37.258246" maxx="-50.618759" maxy="59.162721"/>
+<BoundingBox CRS="EPSG:4326" minx="37.258246" miny="-128.695400" maxx="59.162721" maxy="-50.618759"/>
+<BoundingBox CRS="EPSG:3978" minx="-2073312.314087" miny="-554964.551575" maxx="2968619.066528" maxy="1113575.587097"/>
+      <Layer queryable="1">
+        <Name>2</Name>
+        <Title><![CDATA[Déchiqueteurs d'automobiles ]]></Title>
+        <Abstract><![CDATA[Ce jeu de données fournit de l’information sur les déchiqueteurs de métaux actifs au Canada au cours de l’année de référence donnée. Le jeu de données est maintenu par le Secteur des terres et des minéraux, Ressources naturelles Canada, et est un sous-ensemble de l’information contenue dans la Carte 900a – Principales régions minières, principales mines productrices et principaux champs de pétrole et de gaz du Canada.]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:3978</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>-128.695400</westBoundLongitude><eastBoundLongitude>-50.618759</eastBoundLongitude><southBoundLatitude>37.258246</southBoundLatitude><northBoundLatitude>59.162721</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="-128.695400" miny="37.258246" maxx="-50.618759" maxy="59.162721"/>
+<BoundingBox CRS="EPSG:4326" minx="37.258246" miny="-128.695400" maxx="59.162721" maxy="-50.618759"/>
+<BoundingBox CRS="EPSG:3978" minx="-2073312.314087" miny="-554964.551575" maxx="2968619.066528" maxy="1113575.587097"/>
+        <Style>
+          <Name>default</Name>
+          <Title><![CDATA[Déchiqueteurs d'automobiles ]]></Title>
+          <LegendURL width="183" height="21">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="https://maps-cartes.services.geo.ca:443/server_serveur/services/NRCan/900A_and_top_100_fr/MapServer/WmsServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=2" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1">
+        <Name>3</Name>
+        <Title><![CDATA[Usines de ferro-alliages ]]></Title>
+        <Abstract><![CDATA[Ce jeu de données fournit de l’information sur les usines de ferro-alliages actives au Canada au cours de l’année de référence donnée. Le jeu de données est maintenu par le Secteur des terres et des minéraux, Ressources naturelles Canada, et est un sous-ensemble de l’information contenue dans la Carte 900a – Principales régions minières, principales mines productrices et principaux champs de pétrole et de gaz du Canada.]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:3978</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>-128.695400</westBoundLongitude><eastBoundLongitude>-50.618759</eastBoundLongitude><southBoundLatitude>37.258246</southBoundLatitude><northBoundLatitude>59.162721</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="-128.695400" miny="37.258246" maxx="-50.618759" maxy="59.162721"/>
+<BoundingBox CRS="EPSG:4326" minx="37.258246" miny="-128.695400" maxx="59.162721" maxy="-50.618759"/>
+<BoundingBox CRS="EPSG:3978" minx="-2073312.314087" miny="-554964.551575" maxx="2968619.066528" maxy="1113575.587097"/>
+        <Style>
+          <Name>default</Name>
+          <Title><![CDATA[Usines de ferro-alliages ]]></Title>
+          <LegendURL width="171" height="21">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="https://maps-cartes.services.geo.ca:443/server_serveur/services/NRCan/900A_and_top_100_fr/MapServer/WmsServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=3" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1">
+        <Name>4</Name>
+        <Title><![CDATA[Aciéries et usines de bouletage]]></Title>
+        <Abstract><![CDATA[Ce jeu de données fournit de l’information sur les aciéries actives au Canada au cours de l’année de référence donnée. Le jeu de données est maintenu par le Secteur des terres et des minéraux, Ressources naturelles Canada, et est un sous-ensemble de l’information contenue dans la Carte 900a – Principales régions minières, principales mines productrices et principaux champs de pétrole et de gaz du Canada.]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:3978</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>-128.695400</westBoundLongitude><eastBoundLongitude>-50.618759</eastBoundLongitude><southBoundLatitude>37.258246</southBoundLatitude><northBoundLatitude>59.162721</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="-128.695400" miny="37.258246" maxx="-50.618759" maxy="59.162721"/>
+<BoundingBox CRS="EPSG:4326" minx="37.258246" miny="-128.695400" maxx="59.162721" maxy="-50.618759"/>
+<BoundingBox CRS="EPSG:3978" minx="-2073312.314087" miny="-554964.551575" maxx="2968619.066528" maxy="1113575.587097"/>
+        <Style>
+          <Name>default</Name>
+          <Title><![CDATA[Aciéries et usines de bouletage]]></Title>
+          <LegendURL width="207" height="21">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="https://maps-cartes.services.geo.ca:443/server_serveur/services/NRCan/900A_and_top_100_fr/MapServer/WmsServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=4" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1">
+        <Name>5</Name>
+        <Title><![CDATA[Usines de fusion et affineries de métaux non ferreux]]></Title>
+        <Abstract><![CDATA[Ce jeu de données fournit de l’information sur les usines de fusion et affineries de métaux non ferreux actives au Canada au cours de l’année de référence donnée. Le jeu de données est maintenu par le Secteur des terres et des minéraux, Ressources naturelles Canada, et est un sous-ensemble de l’information contenue dans la Carte 900a – Principales régions minières, principales mines productrices et principaux champs de pétrole et de gaz du Canada.]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:3978</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>-128.695400</westBoundLongitude><eastBoundLongitude>-50.618759</eastBoundLongitude><southBoundLatitude>37.258246</southBoundLatitude><northBoundLatitude>59.162721</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="-128.695400" miny="37.258246" maxx="-50.618759" maxy="59.162721"/>
+<BoundingBox CRS="EPSG:4326" minx="37.258246" miny="-128.695400" maxx="59.162721" maxy="-50.618759"/>
+<BoundingBox CRS="EPSG:3978" minx="-2073312.314087" miny="-554964.551575" maxx="2968619.066528" maxy="1113575.587097"/>
+        <Style>
+          <Name>default</Name>
+          <Title><![CDATA[Usines de fusion et affineries de métaux non ferreux]]></Title>
+          <LegendURL width="114" height="120">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="https://maps-cartes.services.geo.ca:443/server_serveur/services/NRCan/900A_and_top_100_fr/MapServer/WmsServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=5" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+      </Layer>
+      </Layer>
+      <Layer queryable="1">
+        <Title><![CDATA[Production minière]]></Title>
+        <Abstract><![CDATA[Ce jeu de données fournit de l’information sur les principales productions minières en exploitation au Canada au cours de l’année de référence donnée. Le jeu de données est maintenu par le Secteur des terres et des minéraux, Ressources naturelles Canada, et est un sous-ensemble de l’information contenue dans la Carte 900a – Principales régions minières, principales mines productrices et principaux champs de pétrole et de gaz du Canada.]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:3978</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>-143.486545</westBoundLongitude><eastBoundLongitude>-35.004505</eastBoundLongitude><southBoundLatitude>36.470104</southBoundLatitude><northBoundLatitude>72.016514</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="-143.486545" miny="36.470104" maxx="-35.004505" maxy="72.016514"/>
+<BoundingBox CRS="EPSG:4326" minx="36.470104" miny="-143.486545" maxx="72.016514" maxy="-35.004505"/>
+<BoundingBox CRS="EPSG:3978" minx="-2050697.842407" miny="-666310.330627" maxx="2960788.492920" maxy="2506457.043884"/>
+      <Layer queryable="1">
+        <Name>7</Name>
+        <Title><![CDATA[Mines de sables bitumineux]]></Title>
+        <Abstract><![CDATA[Ce jeu de données fournit de l’information sur les principales mines de sables bitumineux en exploitation au Canada au cours de l’année de référence donnée. Le jeu de données est maintenu par le Secteur des terres et des minéraux, Ressources naturelles Canada, et est un sous-ensemble de l’information contenue dans la Carte 900a – Principales régions minières, principales mines productrices et principaux champs de pétrole et de gaz du Canada.]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:3978</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>-143.486545</westBoundLongitude><eastBoundLongitude>-35.004505</eastBoundLongitude><southBoundLatitude>36.470104</southBoundLatitude><northBoundLatitude>72.016514</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="-143.486545" miny="36.470104" maxx="-35.004505" maxy="72.016514"/>
+<BoundingBox CRS="EPSG:4326" minx="36.470104" miny="-143.486545" maxx="72.016514" maxy="-35.004505"/>
+<BoundingBox CRS="EPSG:3978" minx="-2050697.842407" miny="-666310.330627" maxx="2960788.492920" maxy="2506457.043884"/>
+        <Style>
+          <Name>default</Name>
+          <Title><![CDATA[Mines de sables bitumineux]]></Title>
+          <LegendURL width="144" height="24">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="https://maps-cartes.services.geo.ca:443/server_serveur/services/NRCan/900A_and_top_100_fr/MapServer/WmsServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=7" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1">
+        <Name>8</Name>
+        <Title><![CDATA[Mines de charbon]]></Title>
+        <Abstract><![CDATA[Ce jeu de données fournit de l’information sur les principales mines de charbon en exploitation au Canada au cours de l’année de référence donnée. Le jeu de données est maintenu par le Secteur des terres et des minéraux, Ressources naturelles Canada, et est un sous-ensemble de l’information contenue dans la Carte 900a – Principales régions minières, principales mines productrices et principaux champs de pétrole et de gaz du Canada.]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:3978</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>-143.486545</westBoundLongitude><eastBoundLongitude>-35.004505</eastBoundLongitude><southBoundLatitude>36.470104</southBoundLatitude><northBoundLatitude>72.016514</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="-143.486545" miny="36.470104" maxx="-35.004505" maxy="72.016514"/>
+<BoundingBox CRS="EPSG:4326" minx="36.470104" miny="-143.486545" maxx="72.016514" maxy="-35.004505"/>
+<BoundingBox CRS="EPSG:3978" minx="-2050697.842407" miny="-666310.330627" maxx="2960788.492920" maxy="2506457.043884"/>
+        <Style>
+          <Name>default</Name>
+          <Title><![CDATA[Mines de charbon]]></Title>
+          <LegendURL width="66" height="24">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="https://maps-cartes.services.geo.ca:443/server_serveur/services/NRCan/900A_and_top_100_fr/MapServer/WmsServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=8" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1">
+        <Name>9</Name>
+        <Title><![CDATA[Mines de non-métaux]]></Title>
+        <Abstract><![CDATA[Ce jeu de données fournit de l’information sur les principales mines de non-métaux en exploitation au Canada au cours de l’année de référence donnée. Le jeu de données est maintenu par le Secteur des terres et des minéraux, Ressources naturelles Canada, et est un sous-ensemble de l’information contenue dans la Carte 900a – Principales régions minières, principales mines productrices et principaux champs de pétrole et de gaz du Canada.]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:3978</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>-143.486545</westBoundLongitude><eastBoundLongitude>-35.004505</eastBoundLongitude><southBoundLatitude>36.470104</southBoundLatitude><northBoundLatitude>72.016514</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="-143.486545" miny="36.470104" maxx="-35.004505" maxy="72.016514"/>
+<BoundingBox CRS="EPSG:4326" minx="36.470104" miny="-143.486545" maxx="72.016514" maxy="-35.004505"/>
+<BoundingBox CRS="EPSG:3978" minx="-2050697.842407" miny="-666310.330627" maxx="2960788.492920" maxy="2506457.043884"/>
+        <Style>
+          <Name>default</Name>
+          <Title><![CDATA[Mines de non-métaux]]></Title>
+          <LegendURL width="144" height="48">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="https://maps-cartes.services.geo.ca:443/server_serveur/services/NRCan/900A_and_top_100_fr/MapServer/WmsServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=9" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1">
+        <Name>10</Name>
+        <Title><![CDATA[Mines de métaux]]></Title>
+        <Abstract><![CDATA[Ce jeu de données fournit de l’information sur les principales mines de métaux en exploitation au Canada au cours de l’année de référence donnée. Le jeu de données est maintenu par le Secteur des terres et des minéraux, Ressources naturelles Canada, et est un sous-ensemble de l’information contenue dans la Carte 900a – Principales régions minières, principales mines productrices et principaux champs de pétrole et de gaz du Canada.]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:3978</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>-143.486545</westBoundLongitude><eastBoundLongitude>-35.004505</eastBoundLongitude><southBoundLatitude>36.470104</southBoundLatitude><northBoundLatitude>72.016514</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="-143.486545" miny="36.470104" maxx="-35.004505" maxy="72.016514"/>
+<BoundingBox CRS="EPSG:4326" minx="36.470104" miny="-143.486545" maxx="72.016514" maxy="-35.004505"/>
+<BoundingBox CRS="EPSG:3978" minx="-2050697.842407" miny="-666310.330627" maxx="2960788.492920" maxy="2506457.043884"/>
+        <Style>
+          <Name>default</Name>
+          <Title><![CDATA[Mines de métaux]]></Title>
+          <LegendURL width="222" height="144">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="https://maps-cartes.services.geo.ca:443/server_serveur/services/NRCan/900A_and_top_100_fr/MapServer/WmsServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=10" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+      </Layer>
+      </Layer>
+      <Layer queryable="1">
+        <Name>11</Name>
+        <Title><![CDATA[Pétrole et gaz]]></Title>
+        <Abstract><![CDATA[Ce jeu de données fournit de l’information sur les principaux champs de pétrole et de gaz en exploitation au Canada au cours de l’année de référence donnée. Le jeu de données est maintenu par le Secteur des terres et des minéraux, Ressources naturelles Canada, et est un sous-ensemble de l’information contenue dans la Carte 900a – Principales régions minières, principales mines productrices et principaux champs de pétrole et de gaz du Canada.]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:3978</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>-137.861968</westBoundLongitude><eastBoundLongitude>-30.353865</eastBoundLongitude><southBoundLatitude>35.064459</southBoundLatitude><northBoundLatitude>72.965109</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="-137.861968" miny="35.064459" maxx="-30.353865" maxy="72.965109"/>
+<BoundingBox CRS="EPSG:4326" minx="35.064459" miny="-137.861968" maxx="72.965109" maxy="-30.353865"/>
+<BoundingBox CRS="EPSG:3978" minx="-1632177.776611" miny="-660498.453674" maxx="3300646.500488" maxy="2610286.566711"/>
+        <Style>
+          <Name>default</Name>
+          <Title><![CDATA[Pétrole et gaz]]></Title>
+          <LegendURL width="108" height="96">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="https://maps-cartes.services.geo.ca:443/server_serveur/services/NRCan/900A_and_top_100_fr/MapServer/WmsServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=11" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+      </Layer>
+      </Layer>
+      <Layer queryable="1">
+        <Name>12</Name>
+        <Title><![CDATA[Les 100 principaux projets d'exploration]]></Title>
+        <Abstract><![CDATA[Ce jeu de données fournit de l’information sur les 100 principaux projets hors de sites miniers d’exploration et de mise en valeur de gisements au Canada au cours de l’année de référence donnée. Le jeu de données est maintenu par le Secteur des terres et des minéraux, Ressources naturelles Canada, et forme la base de la Carte des 100 principaux projets d’exploration et de mise en valeur de gisements.]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:3978</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>-148.576609</westBoundLongitude><eastBoundLongitude>-34.585343</eastBoundLongitude><southBoundLatitude>41.015450</southBoundLatitude><northBoundLatitude>73.647827</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="-148.576609" miny="41.015450" maxx="-34.585343" maxy="73.647827"/>
+<BoundingBox CRS="EPSG:4326" minx="41.015450" miny="-148.576609" maxx="73.647827" maxy="-34.585343"/>
+<BoundingBox CRS="EPSG:3978" minx="-2206903.626770" miny="-173952.893799" maxx="2752332.302124" maxy="2685218.786072"/>
+        <Style>
+          <Name>default</Name>
+          <Title><![CDATA[Les 100 principaux projets d'exploration]]></Title>
+          <LegendURL width="261" height="21">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="https://maps-cartes.services.geo.ca:443/server_serveur/services/NRCan/900A_and_top_100_fr/MapServer/WmsServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=12" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+      </Layer>
+    </Layer>
+  </Capability>
+</WMS_Capabilities>

@@ -1,18 +1,20 @@
 {
   "name": "ingest-service",
   "version": "1.0.0",
-  "description": "Ingestion service for RAG - Bun compatible",
+  "description": "Ingestion service for RAG - Postgres + pgvector version",
   "type": "module",
   "scripts": {
     "start": "node index.js",
     "dev": "node index.js"
   },
   "dependencies": {
+    "node-fetch": "^3.3.2",
     "neo4j-driver": "^5.12.0",
     "fast-xml-parser": "^4.3.4",
     "csv-parse": "^5.4.0",
-    "node-fetch": "^3.3.2",
     "sha.js": "^2.4.11",
-    "form-data": "^4.0.0"
+    "form-data": "^4.0.0",
+    "pg": "^8.11.0",
+    "pgvector": "^0.2.1"
   }
 }

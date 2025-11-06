@@ -1,0 +1,109 @@
+<html lang="en">
+<head>
+<title>Layer: 900A (ID: 1)</title>
+<link href="/server_serveur/rest/static/main.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<table width="100%" class="userTable">
+<tr>
+<td class="titlecell">
+ArcGIS REST Services Directory
+</td>
+<td align="right">
+<a href="https://maps-cartes.services.geo.ca/server_serveur/login?returnUrl=https://maps-cartes.services.geo.ca/server_serveur/rest/services">Login</a>
+</td>
+</tr>
+</table>
+<table width="100%" class="navTable">
+<tr valign="top">
+<td class="breadcrumbs">
+<a href="/server_serveur/rest/services">Home</a>
+&gt; <a href="/server_serveur/rest/services">services</a>
+&gt; <a href="/server_serveur/rest/services/NRCan">NRCan</a>
+&gt; <a href="/server_serveur/rest/services/NRCan/900A_and_top_100_fr/MapServer">900A_and_top_100_fr (MapServer)</a>
+&gt; <a href="/server_serveur/rest/services/NRCan/900A_and_top_100_fr/MapServer/1">900A</a>
+</td>
+<td align="right">
+<a href="https://maps-cartes.services.geo.ca/server_serveur/sdk/rest/02ss/02ss00000057000000.htm" target="_blank">Help</a> | <a href="https://maps-cartes.services.geo.ca/server_serveur/rest/services/NRCan/900A_and_top_100_fr/MapServer/1?f=help" target="_blank">API Reference</a>
+</td>
+</tr>
+</table><table>
+<tr>
+<td class="apiref">
+<a href="?f=pjson" target="_blank">JSON</a>
+</td>
+</tr>
+</table>
+<h2>Layer: 900A (ID: 1)</h2>
+<div class="rbody">
+<b>Sub Layers:</b>
+<ul>
+<li><a href="/server_serveur/rest/services/NRCan/900A_and_top_100_fr/MapServer/2">P&eacute;trole et gaz</a></li>
+<li><a href="/server_serveur/rest/services/NRCan/900A_and_top_100_fr/MapServer/3">Production mini&egrave;re</a></li>
+<li><a href="/server_serveur/rest/services/NRCan/900A_and_top_100_fr/MapServer/8">Activit&eacute;s m&eacute;tallurgiques</a></li>
+</ul>
+<b>Name:</b> 900A<br/><br/>
+<b>Display Field:</b> <br/><br/>
+<b>Type: </b> Group Layer<br/><br/>
+<b>Geometry Type:</b> null<br/><br/>
+<b>Description: </b> Ce service de cartes Web illustre l'emplacement des principaux champs de p&eacute;trole et de gaz, productions mini&egrave;res et activit&eacute;s m&eacute;tallurgiques au Canada au cours de l'ann&eacute;e de r&eacute;f&eacute;rence indiqu&eacute;e. Les donn&eacute;es de ce service de cartes Web proviennent de la Carte 900A : Principales r&eacute;gions mini&egrave;res, principales mines productrices et principaux champs de p&eacute;trole et de gaz du Canada, produite annuellement par Ressources naturelles Canada. <br/><br/>
+<b>Service Item Id: </b> 612e0b57f649457ab264e604d5d29db6<br/><br/>
+<b>Copyright Text: </b> Gouvernement du Canada; Ressources naturelles Canada; Secteur des terres et des min&eacute;raux<br/><br/>
+<b>Default Visibility: true</b> <br/><br/>
+<b>MaxRecordCount: </b> 0<br/><br/>
+<b>Supported Query Formats: </b> JSON, geoJSON<br/><br/>
+<b>Min Scale: </b> 0<br/><br/>
+<b>Max Scale: </b> 0<br/><br/>
+<b>Supports Advanced Queries: </b> false<br/><br/>
+<b>Supports Statistics: </b> false<br/><br/>
+<b>Has Labels: </b> false<br/><br/>
+<b>Can Modify Layer: </b> false<br/><br/>
+<b>Can Scale Symbols: </b> false<br/><br/>
+<b>Use Standardized Queries: </b> true<br/><br/>
+<b>Extent:</b>
+<ul>
+XMin: -2073312.314086914<br/>
+YMin: -666310.3306274414<br/>
+XMax: 3300646.5004882812<br/>
+YMax: 2610286.566711426<br/>
+Spatial Reference: 3978
+&nbsp;(3978)
+<br/><br/>
+</ul>
+<br/>
+<b>Drawing Info: </b>
+<ul>
+N/A</ul>
+<b>Advanced Query Capabilities: </b>
+<ul>
+Supports Statistics: false<br/>
+Supports OrderBy: false<br/>
+Supports Distinct: false<br/>
+Supports Pagination: false<br/>
+Supports TrueCurve: false<br/>
+Supports Returning Query Extent: true<br/>
+Supports Query With Distance: true<br/>
+Supports Sql Expression: false<br/>
+Supports Query With ResultType: false<br/>
+Supports Returning Geometry Centroid: false<br/>
+</ul>
+<br/>
+<b>HasZ: false</b><br/><br/>
+<b>HasM: false</b> <br/><br/>
+<b>Has Attachments: </b> false<br/><br/>
+<b>HTML Popup Type: </b> esriServerHTMLPopupTypeNone<br/><br/>
+<b>Type ID Field: </b> null<br/><br/>
+<b>Fields: </b>
+<i>None</i><br/><br/>
+<br/>
+<b>Supported Operations</b>:
+&nbsp;&nbsp;<a href="/server_serveur/rest/services/NRCan/900A_and_top_100_fr/MapServer/1/query">Query</a>
+&nbsp;&nbsp;<a href="/server_serveur/rest/services/NRCan/900A_and_top_100_fr/MapServer/1/queryAttachments">Query Attachments</a>
+&nbsp;&nbsp;<a href="/server_serveur/rest/services/NRCan/900A_and_top_100_fr/MapServer/1/generateRenderer">Generate Renderer</a>
+&nbsp;&nbsp;<a href="/server_serveur/rest/services/NRCan/900A_and_top_100_fr/MapServer/1?f=pjson&returnUpdates=true&">Return Updates</a><br/><br/>
+&nbsp;&nbsp;<a href="/server_serveur/rest/services/NRCan/900A_and_top_100_fr/MapServer/1/iteminfo">Iteminfo</a>
+&nbsp;&nbsp;<a href="/server_serveur/rest/services/NRCan/900A_and_top_100_fr/MapServer/1/thumbnail">Thumbnail</a>
+&nbsp;&nbsp;<a href="/server_serveur/rest/services/NRCan/900A_and_top_100_fr/MapServer/1/metadata">Metadata</a></div>
+<br/><br/>
+</body>
+</html>

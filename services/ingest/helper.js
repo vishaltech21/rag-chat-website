@@ -4,8 +4,11 @@ import { createHash } from "crypto";
 import fetch from "node-fetch";
 import { parse as csvParse } from "csv-parse/sync";
 import { XMLParser } from "fast-xml-parser";
+import { Client } from "pg";
+import { Vector } from "pgvector";
 import FormData from "form-data";
 
+/* ---------- FS / download / parse helpers ---------- */
 export async function mkdirIfNotExists(path) {
   try {
     await fs.mkdir(path, { recursive: true });
@@ -29,9 +32,7 @@ export function checksumString(str) {
   return createHash("sha256").update(str).digest("hex");
 }
 
-/** Parse CSV/TSV/JSON/XML into a single long text */
 export function parseDocumentText(raw, mime = "", url = "") {
-  // basic heuristics
   if (mime.includes("xml") || url.endsWith(".xml")) {
     const p = new XMLParser({ ignoreAttributes: false });
     const obj = p.parse(raw);
@@ -40,30 +41,21 @@ export function parseDocumentText(raw, mime = "", url = "") {
   if (mime.includes("json") || url.endsWith(".json")) {
     try {
       const obj = JSON.parse(raw);
-      // If array of rows -> make table-like text
       if (Array.isArray(obj)) {
-        return obj.map((r) => Object.values(r).join(" | ")).join("\n");
+        return obj.map((r) => JSON.stringify(r)).join("\n");
       }
       return JSON.stringify(obj, null, 2);
-    } catch (e) {
-      // fallthrough
-    }
+    } catch (e) {}
   }
   if (mime.includes("csv") || url.endsWith(".csv") || url.endsWith(".tsv")) {
     try {
       const records = csvParse(raw, { columns: true, skip_empty_lines: true });
-      // convert to textual table-ish representation
       return records.map((r) => Object.entries(r).map(([k, v]) => `${k}: ${v}`).join("\n")).join("\n\n---\n\n");
-    } catch (e) {
-      // fallback to raw
-    }
+    } catch (e) {}
   }
-  // default: return raw (for plain text, html, etc.)
   return raw;
 }
 
-/** Split text into chunks of approx `wordsPerChunk` words, with `overlapWords` overlap.
- * Returns array of {chunkIndex, text, summary (first 200 chars)} */
 export function chunkText(text, wordsPerChunk = 800, overlapWords = 128) {
   const words = text.split(/\s+/);
   const chunks = [];
@@ -84,7 +76,7 @@ export function chunkText(text, wordsPerChunk = 800, overlapWords = 128) {
   return chunks;
 }
 
-/** Call OpenAI embeddings endpoint */
+/* ---------- OpenAI embeddings ---------- */
 export async function createOpenAIEmbedding(openaiKey, model, input) {
   const res = await fetch("https://api.openai.com/v1/embeddings", {
     method: "POST",
@@ -99,37 +91,71 @@ export async function createOpenAIEmbedding(openaiKey, model, input) {
     throw new Error(`OpenAI embeddings error: ${res.status} ${text}`);
   }
   const j = await res.json();
-  // returns vector
   return j.data?.[0]?.embedding ?? null;
 }
 
-/** Upsert to Pinecone via upsert endpoint. We expect PINECONE_UPSERT_URL to include index path e.g.
- * https://<index>-<project>.svc.<region>.pinecone.io/vectors/upsert
- *
- * metadata -> object
+/* ---------- Postgres + pgvector helpers ---------- */
+
+/**
+ * Ensure a pg Client is created and connected.
+ * Pass DATABASE_URL env var or connection options.
  */
-export async function upsertPineconeVectors(pineconeUrl, pineconeKey, vectors, namespace = "") {
-  // vectors: [{id, values, metadata}]
-  const body = { vectors };
-  if (namespace) body.namespace = namespace;
-  const res = await fetch(pineconeUrl, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      "Api-Key": pineconeKey
-    },
-    body: JSON.stringify(body)
-  });
-  if (!res.ok) {
-    const txt = await res.text();
-    throw new Error(`Pinecone upsert failed: ${res.status} ${txt}`);
-  }
-  return await res.json();
+export async function createPgClient(databaseUrl) {
+  if (!databaseUrl) throw new Error("DATABASE_URL is required for Postgres client");
+  const client = new Client({ connectionString: databaseUrl });
+  await client.connect();
+  return client;
 }
 
-/** Create Neo4j nodes for Source / Dataset / Document / Chunk
- * driver is neo4j driver from neo4j-driver
+/**
+ * Upsert vectors into Postgres table `vectors`:
+ * schema: id text primary key, embedding vector(DIM), metadata jsonb
+ * Uses pgvector's Vector wrapper for embedding parameter.
+ *
+ * vectors: [{ id, embedding: [float...], metadata: {...} }, ...]
+ * dimension must match the model embedding dimension (e.g. 1536)
  */
+export async function upsertPgVectors(pgClient, vectors, dimension = 1536) {
+  if (!Array.isArray(vectors) || vectors.length === 0) return;
+  // Prepare query
+  // Use a single transaction + upsert loop for reliability
+  await pgClient.query("BEGIN");
+  try {
+    for (const v of vectors) {
+      // use pgvector Vector wrapper
+      const vec = new Vector(v.embedding);
+      await pgClient.query(
+        `INSERT INTO vectors (id, embedding, metadata)
+         VALUES ($1, $2, $3)
+         ON CONFLICT (id) DO UPDATE SET embedding = EXCLUDED.embedding, metadata = EXCLUDED.metadata`,
+        [v.id, vec, v.metadata || {}]
+      );
+    }
+    await pgClient.query("COMMIT");
+  } catch (err) {
+    await pgClient.query("ROLLBACK");
+    throw err;
+  }
+}
+
+/**
+ * Query nearest neighbors using cosine distance <=> operator.
+ * Returns rows: { id, metadata, distance }
+ */
+export async function queryPgNearest(pgClient, queryEmbedding, topK = 5) {
+  const vec = new Vector(queryEmbedding);
+  // Use cosine distance operator <=> (pgvector) - smaller = more similar
+  const q = `
+    SELECT id, metadata, embedding <=> $1 AS distance
+    FROM vectors
+    ORDER BY embedding <=> $1
+    LIMIT $2
+  `;
+  const result = await pgClient.query(q, [vec, topK]);
+  return result.rows;
+}
+
+/* ---------- Neo4j nodes helper (unchanged) ---------- */
 export async function createNeo4jNodes(driver, { source, dataset, document, chunks }) {
   const session = driver.session();
   try {
@@ -165,7 +191,6 @@ export async function createNeo4jNodes(driver, { source, dataset, document, chun
     `;
     await session.run(createDatasetCypher, params);
 
-    // Create chunk nodes in batches
     for (const c of chunks) {
       const chunkCypher = `
       MATCH (doc:Document {doc_id:$doc_id})
