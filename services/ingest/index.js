@@ -14,7 +14,7 @@ import {
   upsertPineconeVectors,
   createNeo4jNodes,
   mkdirIfNotExists
-} from "helpers.js";
+} from "./helpers.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
